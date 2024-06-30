@@ -4,9 +4,8 @@ import java.sql.SQLException;
 
 public class DBManager {
 
-    public Connection getConnection(String database, String user, String password) throws ClassNotFoundException, SQLException {
+    public static Connection getConnection(String database, String user, String password) throws ClassNotFoundException, SQLException {
         Class.forName("com.mysql.jdbc.Driver");
-        return DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/"+database,user,password);
+        return DriverManager.getConnection("jdbc:mysql://localhost:3306/"+database,user,password);
     }
 }
